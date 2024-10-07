@@ -2,7 +2,7 @@ import stomp
 
 def test_connection():
     try:
-        conn = stomp.Connection12([('localhost', 61616)])  # Porta 61616 do ActiveMQ
+        conn = stomp.Connection12([('localhost', 61613)])  
         conn.connect('admin', 'admin', wait=True)
         print("Conexão estabelecida com sucesso!")
         conn.disconnect()

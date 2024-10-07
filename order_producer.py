@@ -2,12 +2,12 @@ import stomp
 import json
 
 def send_order(order):
-    conn = stomp.Connection([('localhost', 61616)])
+    conn = stomp.Connection([('localhost', 61613)])
     conn.connect('admin', 'admin', wait=True)
     
     # Envia o pedido em formato JSON
     order_message = json.dumps(order)
-    conn.send(body=order_message, destination='/queue/order.queue')
+    conn.send(body=order_message, destination='/queue/teste-UPE')
     print(f"Pedido enviado: {order_message}")
     
     conn.disconnect()
